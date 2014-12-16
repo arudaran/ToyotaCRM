@@ -47,10 +47,6 @@ function members_admin_setup() {
 		$members->new_roles_page = add_submenu_page( 'users.php', esc_attr__( 'Add New Role', 'members' ), esc_attr__( 'Add New Role', 'members' ), 'create_roles', 'role-new', 'members_new_role_page' );
 	}
 
-	/* Load post meta boxes on the post editing screen. */
-	add_action( 'load-post.php', 'members_admin_load_post_meta_boxes' );
-	add_action( 'load-post-new.php', 'members_admin_load_post_meta_boxes' );
-
 	/* Load stylesheets and scripts for our custom admin pages. */
 	add_action( 'admin_enqueue_scripts', 'members_admin_enqueue_style' );
 	add_action( 'admin_enqueue_scripts', 'members_admin_enqueue_scripts' );
@@ -92,18 +88,6 @@ function members_admin_enqueue_scripts( $hook_suffix ) {
 }
 
 /**
- * Loads meta boxes for the post editing screen.
- *
- * @since 0.2.0
- */
-function members_admin_load_post_meta_boxes() {
-
-	/* If the content permissions component is active, load its post meta box. */
-	if ( members_get_setting( 'content_permissions' ) )
-		require_once( MEMBERS_ADMIN . 'meta-box-post-content-permissions.php' );
-}
-
-/**
  * Loads the role manager main page (Roles).
  *
  * @since 0.1.0
@@ -141,7 +125,6 @@ function members_admin_contextual_help( $text, $screen ) {
 
 		$text .= '<ul>';
 		$text .= '<li><a href="' . MEMBERS_URI . 'docs/readme.html">' . __( 'Documentation', 'members' ) . '</a></li>';
-		$text .= '<li><a href="http://themehybrid.com/support">' . __( 'Support Forums', 'members' ) . '</a></li>';
 		$text .= '</ul>';
 	}
 
@@ -166,9 +149,7 @@ function members_admin_contextual_help( $text, $screen ) {
 		$text .= '<p><strong>' . __( 'For more information:', 'members' ) . '</strong></p>';
 
 		$text .= '<ul>';
-		$text .= '<li><a href="http://justintadlock.com/archives/2009/08/30/users-roles-and-capabilities-in-wordpress">' . __( 'Users, Roles, and Capabilities', 'members' ) . '</a></li>';
 		$text .= '<li><a href="' . MEMBERS_URI . 'docs/readme.html">' . __( 'Documentation', 'members' ) . '</a></li>';
-		$text .= '<li><a href="http://themehybrid.com/support">' . __( 'Support Forums', 'members' ) . '</a></li>';
 		$text .= '</ul>';
 	}
 
@@ -182,9 +163,7 @@ function members_admin_contextual_help( $text, $screen ) {
 		$text .= '<p><strong>' . __( 'For more information:', 'members' ) . '</strong></p>';
 
 		$text .= '<ul>';
-		$text .= '<li><a href="http://justintadlock.com/archives/2009/08/30/users-roles-and-capabilities-in-wordpress">' . __( 'Users, Roles, and Capabilities', 'members' ) . '</a></li>';
 		$text .= '<li><a href="' . MEMBERS_URI . 'docs/readme.html">' . __( 'Documentation', 'members' ) . '</a></li>';
-		$text .= '<li><a href="http://themehybrid.com/support">' . __( 'Support Forums', 'members' ) . '</a></li>';
 		$text .= '</ul>';
 	}
 

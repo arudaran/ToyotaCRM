@@ -3,8 +3,6 @@
  * Plugin Name: Members
  * Description: A user, role, and content management plugin for controlling permissions and access. A plugin for making WordPress a more powerful <acronym title="Content Management System">CMS</acronym>.
  * Version: 0.2.4
- * Author: Justin Tadlock
- * Author URI: http://justintadlock.com
  *
  * The members plugin was created because the WordPress community is lacking a solid permissions 
  * plugin that is both open source and works completely within the confines of the APIs in WordPress.  
@@ -20,10 +18,6 @@
  *
  * @package Members
  * @version 0.2.4
- * @author Justin Tadlock <justin@justintadlock.com>
- * @copyright Copyright (c) 2009 - 2013, Justin Tadlock
- * @link http://justintadlock.com/archives/2009/09/17/members-wordpress-plugin
- * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
 /**
@@ -145,9 +139,6 @@ class Members_Load {
 
 			/* Load the main admin file. */
 			require_once( MEMBERS_ADMIN . 'admin.php' );
-
-			/* Load the plugin settings. */
-			require_once( MEMBERS_ADMIN . 'settings.php' );
 		}
 	}
 
