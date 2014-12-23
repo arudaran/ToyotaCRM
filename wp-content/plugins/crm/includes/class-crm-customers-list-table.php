@@ -40,8 +40,8 @@ class CRM_Customers_List_Table extends CRM_List_Table {
 	 */
 	public function __construct( $args = array() ) {
 		parent::__construct( array(
-			'singular' => 'user',
-			'plural'   => 'users',
+			'singular' => 'customer',
+			'plural'   => 'customers',
 			'screen'   => isset( $args['screen'] ) ? $args['screen'] : null,
 		) );
 
